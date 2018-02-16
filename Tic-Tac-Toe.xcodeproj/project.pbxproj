@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622AD277202F852A00C63B30 /* gamePlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 622AD275202F852A00C63B30 /* gamePlay.cpp */; };
 		62755A3F202E24F2002C97D3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62755A3E202E24F2002C97D3 /* main.cpp */; };
+		62755A47202E252B002C97D3 /* printBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62755A45202E252B002C97D3 /* printBoard.cpp */; };
+		62F489E8203210840050EED4 /* GameAI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 62F489E6203210840050EED4 /* GameAI.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		622AD275202F852A00C63B30 /* gamePlay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gamePlay.cpp; sourceTree = "<group>"; };
+		622AD276202F852A00C63B30 /* gamePlay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = gamePlay.hpp; sourceTree = "<group>"; };
 		62755A3B202E24F2002C97D3 /* Tic-Tac-Toe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Tic-Tac-Toe"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62755A3E202E24F2002C97D3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		62755A45202E252B002C97D3 /* printBoard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = printBoard.cpp; sourceTree = "<group>"; };
+		62755A46202E252B002C97D3 /* printBoard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = printBoard.hpp; sourceTree = "<group>"; };
+		62F489E6203210840050EED4 /* GameAI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameAI.cpp; sourceTree = "<group>"; };
+		62F489E7203210840050EED4 /* GameAI.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameAI.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				62755A3E202E24F2002C97D3 /* main.cpp */,
+				62F489E6203210840050EED4 /* GameAI.cpp */,
+				62F489E7203210840050EED4 /* GameAI.hpp */,
+				622AD275202F852A00C63B30 /* gamePlay.cpp */,
+				622AD276202F852A00C63B30 /* gamePlay.hpp */,
+				62755A45202E252B002C97D3 /* printBoard.cpp */,
+				62755A46202E252B002C97D3 /* printBoard.hpp */,
 			);
 			path = "Tic-Tac-Toe";
 			sourceTree = "<group>";
@@ -119,7 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62755A47202E252B002C97D3 /* printBoard.cpp in Sources */,
+				622AD277202F852A00C63B30 /* gamePlay.cpp in Sources */,
 				62755A3F202E24F2002C97D3 /* main.cpp in Sources */,
+				62F489E8203210840050EED4 /* GameAI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
