@@ -15,6 +15,7 @@
 Board playboard;
 GameAISimple AILevel1;
 GameAIMedium AILevel2;
+GameAIHard AILevel3;
 
 void levelOne(){
     char turn = 'X';
@@ -31,9 +32,9 @@ void levelOne(){
     }
     if (playboard.checkForWin(changePlayer(turn))){
         cout<<"Player "<<changePlayer(turn)<<" wins"<<endl;
-        cout<<"New Game?"<<endl;
+        cout<<"New Game? (Y/N)"<<endl;
         cin>>replay;
-        if (replay =="y"){
+        if (replay =="y" || replay == "Y"){
             levelOne();
         }else{
             runGame();
@@ -41,9 +42,9 @@ void levelOne(){
     }
     else{
         cout<<"A Draw"<<endl;
-        cout<<"New Game?"<<endl;
+        cout<<"New Game? (Y/N)"<<endl;
         cin>>replay;
-        if (replay =="y"){
+        if (replay =="y" || replay == "Y"){
             levelOne();
         }else{
             runGame();
@@ -63,16 +64,16 @@ void levelTwo(){
         if (turn == 'X'){
            movement(turn);
         }else{
-            AILevel1.generateMove();
+            AILevel1.makeMove();
         }
         playboard.printBoard();
         turn = changePlayer(turn);
     }
     if (playboard.checkForWin(changePlayer(turn))){
         cout<<"Player "<<changePlayer(turn)<<" wins"<<endl;
-        cout<<"New Game?(y/n)"<<endl;
+        cout<<"New Game?(Y/N)"<<endl;
         cin>>replay;
-        if (replay =="y"){
+        if (replay =="y" || replay == "Y"){
             levelTwo();
         }else{
             runGame();
@@ -80,8 +81,9 @@ void levelTwo(){
     }
     else{
         cout<<"A Draw"<<endl;
-        cout<<"New Game?(y/n)"<<endl;
-        if (replay =="y"){
+        cout<<"New Game?(Y/N)"<<endl;
+        cin>>replay;
+        if (replay =="y" || replay == "Y"){
             levelTwo();
         }else{
             runGame();
@@ -101,26 +103,66 @@ void levelThree(){
         if (turn == 'X'){
             movement(turn);
         }else{
-            AILevel2.generateMove();
+            AILevel2.makeMove();
         }
         playboard.printBoard();
         turn = changePlayer(turn);
     }
     if (playboard.checkForWin(changePlayer(turn))){
         cout<<"Player "<<changePlayer(turn)<<" wins"<<endl;
-        cout<<"New Game?(y/n)"<<endl;
+        cout<<"New Game?(Y/N)"<<endl;
         cin>>replay;
-        if (replay =="y"){
-            levelTwo();
+        if (replay =="y" || replay == "Y"){
+            levelThree();
         }else{
             runGame();
         }
     }
     else{
         cout<<"A Draw"<<endl;
-        cout<<"New Game?(y/n)"<<endl;
-        if (replay =="y"){
-            levelTwo();
+        cout<<"New Game?(Y/N)"<<endl;
+        cin>>replay;
+        if (replay =="y" || replay == "Y"){
+            levelThree();
+        }else{
+            runGame();
+        }
+    }
+}
+
+void levelFour(){
+    char turn = 'X';
+    string replay;
+    playboard.clearBoard();
+    turn = 'X';
+    playboard.printBoard();
+    cout<<endl;
+    cout<<endl;
+    while ((playboard.checkForWin(changePlayer(turn)) == false && playboard.validateMove()) == true){
+        if (turn == 'X'){
+            movement(turn);
+        }else{
+            AILevel3.makeMove();
+        }
+        playboard.printBoard();
+        turn = changePlayer(turn);
+    }
+    if (playboard.checkForWin(changePlayer(turn))){
+        cout<<"Player "<<changePlayer(turn)<<" wins"<<endl;
+        cout<<"New Game?(Y/N)"<<endl;
+        cin>>replay;
+        if (replay =="y" || replay == "Y"){
+            levelFour();
+        }else{
+            runGame();
+        }
+    }
+    else{
+        cout<<"A Draw"<<endl;
+        cout<<"New Game?(Y/N)"<<endl;
+        cin>>replay;
+        if (replay =="y" || replay == "Y"){
+            levelFour();
         }else{
             runGame();
         }
@@ -143,19 +185,24 @@ void runGame(){
     cout<<"2. Easy Single Player"<<endl;
     cout<<"3. Medium Single Player"<<endl;
     cout<<"4. Hard Single Player"<<endl;
+    cout<<"5. Exit"<<endl;
     cin>> level;
     int levelNum;
     try{
         levelNum = stoi(level);
     }
     catch(const std::invalid_argument& ia){
-        level = "1";
+        cout<<"Invalid Input"<<endl;
+        level = "180383944";
         levelNum = stoi(level);
     }
     switch (levelNum){
         case 1 : levelOne();
         case 2 : levelTwo();
         case 3 : levelThree();
+        case 4 : levelFour();
+        case 180383944 : runGame();
+        default : return;
     }
 }
 

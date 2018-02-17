@@ -14,16 +14,26 @@
 
 class GameAISimple{
 public:
-    void generateMove();
+    void makeMove();
 private:
 };
 
 class GameAIMedium{
 public:
-    void generateMove();
+    void makeMove();
     void moveRandomisation();
     bool winningMovePossible();
     bool goingToLose();
+private:
+};
+
+class GameAIHard{
+public:
+    void makeMove();
+    void moveRandomisation();
+    bool winningMovePossible();
+    bool goingToLose();
+    bool influentialMoves(int possiblePreferences[], int);
 private:
 };
 

@@ -18,6 +18,10 @@ void levelOne();
 
 void levelTwo();
 
+void levelThree();
+
+void levelFour();
+
 void runGame();
 
 char changePlayer(char);

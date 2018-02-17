@@ -11,8 +11,6 @@
 #include "gamePlay.hpp"
 
 int main(int argc, const char * argv[]) {
-
-//    runGame();
     runGame();
     return 0;
 }
