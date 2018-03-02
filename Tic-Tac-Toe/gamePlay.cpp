@@ -11,6 +11,7 @@
 #include "GameAI.hpp"
 #include <iostream>
 #include <sstream>
+#include <unistd.h>
 
 Board playboard;
 GameAISimple AILevel1;
@@ -64,6 +65,15 @@ void levelTwo(){
         if (turn == 'X'){
            movement(turn);
         }else{
+            cout<<endl;
+            cout<<endl;
+            sleep(1);
+            cout<<"Making Move."<<endl;
+            sleep(1);
+            cout<<"Making Move.."<<endl;
+            sleep(1);
+            cout<<"Making Move..."<<endl;
+            sleep(1);
             AILevel1.makeMove();
         }
         playboard.printBoard();
@@ -103,6 +113,15 @@ void levelThree(){
         if (turn == 'X'){
             movement(turn);
         }else{
+            cout<<endl;
+            cout<<endl;
+            sleep(1);
+            cout<<"Making Move."<<endl;
+            sleep(1);
+            cout<<"Making Move.."<<endl;
+            sleep(1);
+            cout<<"Making Move..."<<endl;
+            sleep(1);
             AILevel2.makeMove();
         }
         playboard.printBoard();
@@ -142,6 +161,15 @@ void levelFour(){
         if (turn == 'X'){
             movement(turn);
         }else{
+            cout<<endl;
+            cout<<endl;
+            sleep(1);
+            cout<<"Making Move."<<endl;
+            sleep(1);
+            cout<<"Making Move.."<<endl;
+            sleep(1);
+            cout<<"Making Move..."<<endl;
+            sleep(1);
             AILevel3.makeMove();
         }
         playboard.printBoard();
@@ -201,6 +229,7 @@ void runGame(){
         case 2 : levelTwo();
         case 3 : levelThree();
         case 4 : levelFour();
+        case 5 : return;
         case 180383944 : runGame();
         default : return;
     }
