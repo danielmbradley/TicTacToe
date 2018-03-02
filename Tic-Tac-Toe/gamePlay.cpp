@@ -200,7 +200,7 @@ void levelFour(){
 
 void runGame(){
     playboard.clearBoard();
-    cout<<"Each box has a number, the number is indicated in the grib below."<<endl;
+    cout<<"Each box has a number, the number is indicated in the grid below."<<endl;
     cout<<"To place a counter in a box, simply type the box number when asked"<<endl;
     playboard.initalise();
     playboard.printBoard();
