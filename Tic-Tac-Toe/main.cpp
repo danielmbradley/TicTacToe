@@ -7,7 +7,6 @@
 //
 
 #include <iostream>
-#include "printBoard.hpp"
 #include "gamePlay.hpp"
 
 int main(int argc, const char * argv[]) {

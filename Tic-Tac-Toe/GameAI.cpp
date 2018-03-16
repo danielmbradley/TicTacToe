@@ -41,7 +41,7 @@ void GameAIMedium::makeMove(){
 }
 
 void GameAIMedium::moveRandomisation(){
-    int AIMoves[10];
+    int AIMoves[9];
     for (int i = 0; i!= 9; i++){
         if (playboard.BoardValue[i] == ' '){
             AIMoves[i] = i;
