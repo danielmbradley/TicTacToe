@@ -19,11 +19,17 @@ void GameAISimple::makeMove(){
     for (int i = 0; i!= 9; i++){
         if (playboard.BoardValue[i] == ' '){
             AIMoves[i] = i;
+        }else{
+            AIMoves[i] = 10;
         }
     }
     random_shuffle(begin(AIMoves), end(AIMoves));
-    playboard.BoardValue[AIMoves[0]] = 'O';
-    cout<<"My move is "<< AIMoves[0]+1<<endl;
+    if (AIMoves[0] == 10){
+        GameAISimple::makeMove();
+    }else{
+        playboard.BoardValue[AIMoves[0]] = 'O';
+        cout<<"My move is "<< AIMoves[0]+1<<endl;
+    }
 }
 
 void GameAIMedium::makeMove(){
@@ -35,15 +41,21 @@ void GameAIMedium::makeMove(){
 }
 
 void GameAIMedium::moveRandomisation(){
-    int AIMoves[9];
+    int AIMoves[10];
     for (int i = 0; i!= 9; i++){
         if (playboard.BoardValue[i] == ' '){
             AIMoves[i] = i;
+        }else{
+            AIMoves[i] = 10;
         }
     }
     random_shuffle(begin(AIMoves), end(AIMoves));
-    playboard.BoardValue[AIMoves[0]] = 'O';
-    cout<<"My move is "<< AIMoves[0]+1<<endl;
+    if (AIMoves[0] == 10){
+        GameAIMedium::makeMove();
+    }else{
+        playboard.BoardValue[AIMoves[0]] = 'O';
+        cout<<"My move is "<< AIMoves[0]+1<<endl;
+    }
 }
 
 bool GameAIMedium::winningMovePossible(){
@@ -94,11 +106,17 @@ void GameAIHard::moveRandomisation(){
     for (int i = 0; i!= 9; i++){
         if (playboard.BoardValue[i] == ' '){
             AIMoves[i] = i;
+        }else{
+            AIMoves[i] = 10;
         }
     }
     random_shuffle(begin(AIMoves), end(AIMoves));
-    playboard.BoardValue[AIMoves[0]] = 'O';
-    cout<<"My move is "<< AIMoves[0]+1<<endl;
+    if (AIMoves[0] == 10){
+        GameAIHard::makeMove();
+    }else{
+        playboard.BoardValue[AIMoves[0]] = 'O';
+        cout<<"My move is "<< AIMoves[0]+1<<endl;
+    }
 }
 
 bool GameAIHard::winningMovePossible(){

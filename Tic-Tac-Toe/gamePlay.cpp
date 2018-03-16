@@ -233,6 +233,7 @@ void runGame(){
         case 180383944 : runGame();
         default : return;
     }
+    return;
 }
 
 void movement(char whosTurn){
